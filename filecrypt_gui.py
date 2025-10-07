@@ -10,7 +10,7 @@ import sys
 # ---------- Função para localizar recursos (GIF) mesmo dentro do exe ----------
 def resource_path(relative_path):
     try:
-        base_path = sys._MEIPASS  # PyInstaller cria pasta temporária
+        base_path = sys._MEIPASS  
     except Exception:
         base_path = os.path.abspath(".")
     return os.path.join(base_path, relative_path)
@@ -81,6 +81,8 @@ main_frame = tk.Frame(root, bg="#070e25")
 main_frame.place(relx=0.5, rely=0.0, anchor="n")
 
 # ---------- Campos ----------
+tk.Label(main_frame,text="CRIPTOGRAFIA FACIL\n\n", font=font_label, bg="#070e25",fg="white")\
+.grid(row=0, column=0, columnspan=2, sticky="n", pady=(20,10))
 tk.Label(main_frame, text="Chave (key.bin):", font=font_label, bg="#070e25", fg="white")\
     .grid(row=0, column=0, columnspan=2, sticky="w", pady=(20,10))
 entry_key = tk.Entry(main_frame, width=entry_width, font=font_entry, bg="#1a1f38", fg="white", insertbackground="white")
